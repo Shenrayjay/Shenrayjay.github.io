@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age</title>
+    <link rel="stylesheet" href="./navbar.css" />
+    <style>
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="nav-ul">
+        <li><a href="./index.html">Star rating</a></li>
+        <li><a href="./bmi.html">BMI計算</a></li>
+        <li><a href="./CtoF.html">攝氏華氏換算</a></li>
+        <li><a href="#">年齡計算</a></li>
+        <li><a href="./memorygame.html">記憶遊戲</a></li>
+        <li><a href="./cashnote.html">簡易記帳本</a></li>
+        <li><a href="./year.html">平、閏年判斷</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <form id="ageForm">
+        <label for="birthday">生日：</label>
+        <input type="date" id="birthday" />
+        <button type="submit">計算年齡</button>
+        <label for="age">用戶年齡：</label>
+        <input type="text" id="age" readonly />
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("ageForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          let birthday = new Date(document.getElementById("birthday").value);
+          let today = new Date();
+          let age = today.getFullYear() - birthday.getFullYear();
+          let month = today.getMonth() - birthday.getMonth();
+          if (
+            month < 0 ||
+            (month === 0 && today.getDate() < birthday.getDate())
+          ) {
+            age--;
+          }
+          document.getElementById("age").value = age;
+          if (Number(document.getElementById("age").value) > 18) {
+            setTimeout(function () {
+              alert("已滿18歲");
+            }, 1000); // 延遲1秒（1000毫秒）
+          } else if (Number(document.getElementById("age").value) < 18) {
+            setTimeout(function () {
+              alert("未滿18歲");
+            }, 1000); // 延遲1秒（1000毫秒）
+          }
+        });
+    </script>
+  </body>
+</html>

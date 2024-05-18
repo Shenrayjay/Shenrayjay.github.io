@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>star rating js</title>
+    <link rel="stylesheet" href="./navbar.css" />
+    <link rel="stylesheet" href="./starrating.css" />
+    <style>
+      .content {
+        flex: 1; /* 讓 .content 填充剩餘的空間 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      .img {
+        display: flex;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="nav-ul">
+        <li><a href="#">Star rating</a></li>
+        <li><a href="./bmi.html">BMI計算</a></li>
+        <li><a href="./CtoF.html">攝氏華氏換算</a></li>
+        <li><a href="./age.html">年齡計算</a></li>
+        <li><a href="./memorygame.html">記憶遊戲</a></li>
+        <li><a href="./cashnote.html">簡易記帳本</a></li>
+        <li><a href="./year.html">平、閏年判斷</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <div class="img">
+        <img id="img1" src="./images/S__277135365.jpg" />
+        <img id="img2" src="./images/S__277135365.jpg" />
+        <img id="img3" src="./images/S__277135365.jpg" />
+        <img id="img4" src="./images/S__277135365.jpg" />
+        <img id="img5" src="./images/S__277135365.jpg" />
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"
+      integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+      integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./starrating.js"></script>
+  </body>
+</html>

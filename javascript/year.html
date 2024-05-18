@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Year</title>
+    <link rel="stylesheet" href="./navbar.css" />
+    <style>
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="nav-ul">
+        <li><a href="./index.html">Star rating</a></li>
+        <li><a href="./bmi.html">BMI計算</a></li>
+        <li><a href="./CtoF.html">攝氏華氏換算</a></li>
+        <li><a href="./age.html">年齡計算</a></li>
+        <li><a href="./memorygame.html">記憶遊戲</a></li>
+        <li><a href="./cashnote.html">簡易記帳本</a></li>
+        <li><a href="#">平、閏年判斷</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <form id="yearForm">
+        <label for="year">西元年份：</label>
+        <input type="text" id="year" placeholder="請輸入西元年份" />
+        <button type="submit">判斷</button>
+        <input
+          type="text"
+          id="leap"
+          placeholder="這個年份是不是閏年"
+          readonly
+        />
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("yearForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          let year = document.getElementById("year").value;
+          if (year > 2024 || year < 0) {
+            document.getElementById("leap").value = `請好好填年份`;
+          } else if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
+            document.getElementById("leap").value = `閏年`;
+          } else {
+            document.getElementById("leap").value = `平年`;
+          }
+        });
+    </script>
+  </body>
+</html>

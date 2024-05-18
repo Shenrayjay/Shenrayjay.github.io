@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cash note</title>
+    <link rel="stylesheet" href="./navbar.css" />
+    <style>
+      th,
+      tr,
+      td {
+        border: 1px solid black;
+        /* border-collapse: collapse; */
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="nav-ul">
+        <li><a href="./index.html">Star rating</a></li>
+        <li><a href="./bmi.html">BMI計算</a></li>
+        <li><a href="./CtoF.html">攝氏華氏換算</a></li>
+        <li><a href="./age.html">年齡計算</a></li>
+        <li><a href="./memorygame.html">記憶遊戲</a></li>
+        <li><a href="#">簡易記帳本</a></li>
+        <li><a href="./year.html">平、閏年判斷</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <form id="cash-note">
+        <input type="date" id="date" name="date" />
+        <label for="object">項目：</label>
+        <input type="text" id="object" name="object" />
+        <label for="cost">金額：</label>
+        <input type="text" name="cost" id="cost" />
+        <button type="submit">新增</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>日期</th>
+            <th>項目</th>
+            <th>金額</th>
+          </tr>
+        </thead>
+        <tbody id="data">
+          <!-- 資料要填入這裡 -->
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      document
+        .getElementById("cash-note")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          let date = document.getElementById("date").value;
+          let object = document.getElementById("object").value;
+          let cost = document.getElementById("cost").value;
+
+          if (!date || !object || !cost) {
+            alert("請填寫所有欄位");
+            return;
+          }
+
+          let table = document.getElementById("data");
+          let row = table.insertRow();
+          let cell1 = row.insertCell(0);
+          let cell2 = row.insertCell(1);
+          let cell3 = row.insertCell(2);
+
+          cell1.innerHTML = date;
+          cell2.innerHTML = object;
+          cell3.innerHTML = cost;
+
+          document.getElementById("cash-note").reset();
+        });
+    </script>
+  </body>
+</html>

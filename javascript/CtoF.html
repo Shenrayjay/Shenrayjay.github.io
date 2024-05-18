@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C to F</title>
+    <link rel="stylesheet" href="./navbar.css" />
+    <style>
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="nav-ul">
+        <li><a href="./index.html">Star rating</a></li>
+        <li><a href="./bmi.html">BMI計算</a></li>
+        <li><a href="#">攝氏華氏換算</a></li>
+        <li><a href="./age.html">年齡計算</a></li>
+        <li><a href="./memorygame.html">記憶遊戲</a></li>
+        <li><a href="./cashnote.html">簡易記帳本</a></li>
+        <li><a href="./year.html">平、閏年判斷</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <form id="CtoFform">
+        <label for="c">攝氏溫度：</label>
+        <input type="text" id="c" placeholder="請輸入攝氏溫度" />
+        <button type="submit">計算</button>
+        <input type="text" id="CtoF" placeholder="華氏溫度" readonly />
+      </form>
+      <form id="FtoCform">
+        <label for="c">華氏溫度：</label>
+        <input type="text" id="f" placeholder="請輸入華氏溫度" />
+        <button type="submit">計算</button>
+        <input type="text" id="FtoC" placeholder="攝氏溫度" readonly />
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("CtoFform")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          let celsius = document.getElementById("c").value;
+          let fahrenheit = celsius * (9 / 5) + 32;
+
+          document.getElementById("CtoF").value = fahrenheit.toFixed(2);
+        });
+      document
+        .getElementById("FtoCform")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          let fahrenheit = document.getElementById("f").value;
+          let celsius = ((fahrenheit - 32) * 5) / 9;
+
+          document.getElementById("FtoC").value = celsius.toFixed(2);
+        });
+    </script>
+  </body>
+</html>

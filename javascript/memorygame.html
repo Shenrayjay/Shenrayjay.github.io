@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="./navbar.css" />
+    <link rel="stylesheet" href="./memorygame.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="nav-ul">
+        <li><a href="./index.html">Star rating</a></li>
+        <li><a href="./bmi.html">BMI計算</a></li>
+        <li><a href="./CtoF.html">攝氏華氏換算</a></li>
+        <li><a href="./age.html">年齡計算</a></li>
+        <li><a href="#">記憶遊戲</a></li>
+        <li><a href="./cashnote.html">簡易記帳本</a></li>
+        <li><a href="./year.html">平、閏年判斷</a></li>
+      </ul>
+    </nav>
+    <div class="game">
+      <div class="controls">
+        <button>start</button>
+        <div class="stats">
+          <div class="moves">0 moves</div>
+          <div class="timer">Time: 0 sec</div>
+        </div>
+      </div>
+      <div class="board-container">
+        <div class="board" data-dimension="4"></div>
+        <div class="win">You won!</div>
+      </div>
+    </div>
+    <script src="./memorygame.js"></script>
+  </body>
+</html>
