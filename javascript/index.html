@@ -13,11 +13,18 @@
         justify-content: center;
         align-items: center;
         margin-top: 50px;
+        flex-direction: column; /* 垂直排列元素 */
       }
 
       .img {
         display: flex;
         gap: 10px;
+      }
+
+      .rating-text {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
       }
     </style>
   </head>
@@ -41,6 +48,8 @@
         <img id="img4" src="./images/S__277135365.jpg" />
         <img id="img5" src="./images/S__277135365.jpg" />
       </div>
+      <div class="rating-text">單擊圖片評分，雙擊圖片重置評分</div>
+      <div class="rating-text" id="ratingText">您目前給予0分</div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"
